@@ -16,11 +16,7 @@ class DMHC(commands.Cog):
         category = get(guild.categories, name="Private Rooms")
         author=ctx.author
         authorID = author.id
-        overwrites = {
-        guild.default_role: discord.PermissionOverwrite(read_messages=False),
-        author: discord.PermissionOverwrite(read_messages=True),
-        therapist_role: discord.PermissionOverwrite(read_messages=True)
-        }
+        overwrites = {guild.default_role: discord.PermissionOverwrite(read_messages=False),author: discord.PermissionOverwrite(read_messages=True),therapist_role: discord.PermissionOverwrite(read_messages=True)}
         
         if get(guild.channels, name=str(authorID)) is None:
 
